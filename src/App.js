@@ -17,7 +17,7 @@ class App extends React.Component {
     );
     this.setState({ movies, isLoading: false });
   };
-  renderMovies = (movies) => {
+  renderMovies = movies => {
     return movies.map(movie => (
       <Movie
         key={movie.id}
@@ -36,7 +36,15 @@ class App extends React.Component {
   render() {
     const { isLoading, movies } = this.state;
     return (
-      <div>{isLoading ? "Rendering Movies..." : this.renderMovies(movies)}</div>
+      <section className="container">
+        {isLoading ? (
+          <div className="loader">
+            <span className="loader_text">Loading...</span>
+          </div>
+        ) : (
+          <div className="movies">{this.renderMovies(movies)}</div>
+        )}
+      </section>
     );
   }
 }
