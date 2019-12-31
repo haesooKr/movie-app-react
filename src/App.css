@@ -1,83 +1,134 @@
-body{
-    margin: 0;
+*{
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #eff3f7;
-    height: 100%;
+    margin: 0;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-html,
-body,
-#root,
+.root,
+.loader{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+.loader_text{
+    text-align: center;
+}
+
 .container{
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(255, 230, 230);
 }
 
-.loader{
-    width: 100%;
-    height: 100%;
+.movie{
+    margin-top: 30px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    padding: 10px;
 }
-
-.movies{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    padding: 50px;
-    padding-top: 70px;
-    width: 80%;
-}
-.movies .movie{
-    width: 45%;
-    background-color: #fff;
-    margin-bottom: 70px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 20px;
-    position: relative;
-    color: rgb(194, 197, 201);
-    border-radius: 5px;
-    -webkit-box-shadow: 10px 10px 9px -1px rgba(0,0,0,0.37);
--moz-box-shadow: 10px 10px 9px -1px rgba(0,0,0,0.37);
-box-shadow: 10px 10px 9px -1px rgba(0,0,0,0.37);
-}
-
 .movie img{
-    position: relative;
-    top: -50px;
-    max-width: 120px;
-    margin-right: 30px;
-    -webkit-box-shadow: 10px 10px 9px -1px rgba(0,0,0,0.37);
-    -moz-box-shadow: 10px 10px 9px -1px rgba(0,0,0,0.37);
-    box-shadow: 10px 10px 9px -1px rgba(0,0,0,0.37);
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 150px;
 }
-
-.movie .movie_title,
-.movie .movie_year{
-    margin: 0;
-    font-weight: 300;
-    color: black;
-}
-
-.movie .movie_title{
-    margin-bottom: 5px;
-    font-size: 24px;
-}
-
-.movie .genres{
-    list-style: none;
-    padding: 0;
-    margin: 10px 0;
+.movie_data{
     display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    border: 1px solid rgb(252, 185, 185);
+    border-radius: 5px;
+}
+
+.movie_title{
+    font-size: 1.5rem;
+    text-align: center;
+}
+.movie_year{
+    text-align: center;
+}
+.genres{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 0.397);
+    list-style-type: none;
 }
 .genres li{
-    margin-right: 10px;
-    font-size: 14px;
+    float: left;
+    margin: 5px 10px;
+}
+.movie_summary{
+    color: rgba(0, 0, 0, 0.685);
+    padding: 10px;
+    font-style: italic;
+}
+
+@media only screen and (min-width: 768px){
+    .movies{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .movie{
+        position: relative;
+        flex-direction: row;
+        margin-top: 100px;
+        width: 85%;
+        padding-left: 140px;
+    }
+    .movie img{
+        position: absolute;
+        top: -70px;
+        left: 0;
+    }
+    .movie_summary{
+        padding: 10px 40px;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .movies{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .movie{
+        position: relative;
+        flex-direction: row;
+        margin-top: 100px;
+        width: 85%;
+        padding-left: 0px;
+    }
+    .movie_data{
+        padding: 25px 10px;
+    }
+    .movie img{
+        position: relative;
+        width: 200px;
+    }
+    .movie_summary{
+        padding: 10px 40px;
+    }
+    .movie_title{
+        font-size: 2.5rem;
+    }
+    .movie_year{
+        font-size: 1.4rem;
+    }
+    .genres{
+        font-size: 1rem;
+    }
+    .movie_summary{
+        font-size: 1.4rem;
+    }
 }
