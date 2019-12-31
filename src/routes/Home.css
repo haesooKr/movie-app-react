@@ -31,6 +31,14 @@
     flex-direction: column;
     padding: 10px;
 }
+.movies a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
 .movie img{
     border-radius: 10px;
     margin: 0 auto;
