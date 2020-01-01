@@ -4,7 +4,6 @@ import "./Detail.css";
 export default class Detail extends Component {
     componentDidMount(){
         const { location, history } = this.props;
-        console.log(location.state);
         location || history.push('./');
     }
     render() {
@@ -17,7 +16,7 @@ export default class Detail extends Component {
                     <h5>{year}</h5>
                     <img src={poster} alt="poster" name="poster"></img>
                     <ul>
-                        {genres.map( (index, genre) => <li key={index}>{genre}</li>)}
+                        {genres.map( (genre, index) => <li key={index}>{genre}</li>)}
                     </ul>
                     <p>{summary}</p>
                 </div>
